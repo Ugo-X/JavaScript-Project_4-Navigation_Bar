@@ -303,8 +303,16 @@ nav {
 
 .links {
   margin: 0;
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
   /* 450 *198.38  are the required dimensions we require*/
   /* we need to get the height of the list */
+}
+
+/* toggle class */
+.show-links{
+  height:200px ;
 }
 
 .links a {
@@ -340,10 +348,13 @@ nav {
   }
   .links{
     display: flex;
+    /* note this. If you do not put this height auto, once you make the height of the links zero and hide the overflow, on the biggere screen, you wont see your links. */
+    height: auto;
+    
   }
   .links a{
     padding: 0;
-    margin: 0 0.6rem;
+    margin: 0 1rem;
   }
   .links a:hover {
   transform: translateX(0px);
@@ -367,4 +378,5 @@ nav {
 .social-icons a:hover{
   transform: translateY(-10px);
 }
+
 }
